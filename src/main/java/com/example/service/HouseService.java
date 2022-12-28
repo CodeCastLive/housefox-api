@@ -29,7 +29,7 @@ public class HouseService {
     @Autowired
     private ResourceBundleService resourceBundleService;
 
-    public HouseResponseDTO create(HouseCreateDTO dto, Integer userId) {
+    public HouseResponseDTO create(HouseCreateDTO dto) {
         HouseEntity houseEntity = new HouseEntity();
         houseEntity.setTitle(dto.getTitle());
         houseEntity.setDescription(dto.getDescription());
@@ -58,7 +58,7 @@ public class HouseService {
     }
 
 
-    public Boolean update(Long id, HouseUpdateDTO dto, Integer userId, Language language) {
+    public Boolean update(Long id, HouseUpdateDTO dto, Language language) {
         Optional<HouseEntity> byId = houseRepository.findById(id);
         if (byId.isEmpty()) {
             throw new HouseNotFoundException(resourceBundleService.getMessage("channel.not.found", language));
@@ -76,7 +76,7 @@ public class HouseService {
         return true;
     }
 
-    public Boolean delete(Long id, Integer userId, Language language) {
+    public Boolean delete(Long id, Language language) {
         Optional<HouseEntity> byId = houseRepository.findById(id);
         if (byId.isEmpty()) {
             throw new HouseNotFoundException(resourceBundleService.getMessage("house.not.found", language));
@@ -97,7 +97,7 @@ public class HouseService {
         return toHouseFullResponse(houseEntity);
     }
 
-    public Page<HouseFullResponseDTO> getAll(Integer page, Integer size, Language language) {
+    public Page<HouseFullResponseDTO> getAll(Integer page, Integer size) {
         Pageable pageable = PageRequest.of(page, size);
 
         Page<HouseEntity> pageObj = houseRepository.findAll(pageable);
@@ -129,7 +129,7 @@ public class HouseService {
         return response;
     }
 
-    public List<HouseFullResponseDTO> getLikedTop10(Language language) {
+    public List<HouseFullResponseDTO> getLikedTop10() {
         List<HouseEntity> top10ByLikeCount = houseRepository.findTopXByLikeCount(10);
         List<HouseFullResponseDTO> result = new LinkedList<>();
 
@@ -141,7 +141,7 @@ public class HouseService {
     }
 
 
-    public List<HouseFullResponseDTO> getViewedTop10(Language language) {
+    public List<HouseFullResponseDTO> getViewedTop10() {
         List<HouseEntity> top10ByLikeCount = houseRepository.findTopXByViewCount(10);
         List<HouseFullResponseDTO> result = new LinkedList<>();
 

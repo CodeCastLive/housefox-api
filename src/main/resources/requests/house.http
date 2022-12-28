@@ -1,0 +1,14 @@
+### CREATE HOUSE (ADMIN)
+POST http://localhost:8080/house/create
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzIyNTQwNTcsImVtYWlsIjoiYWRtaW5jZWVrQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNjcyMzQwNDU3LCJpc3MiOiJob3VzZWZveCB0ZXN0IHBvcnRhbGkifQ.-L80wiX9sRkUPJJDcyokzOGfSj3PEoQ1w81SFMETRDOfq9p4II0oeqDAD3XsV0retOi3BlAcNiRDhHezcbmXCA
+Content-Type: application/json
+
+{
+  "title": "Oq uy",
+  "description": "Bu uy faqat boylar uchun",
+  "location": "Washington",
+  "type": "DACHA",
+  "price": 1000,
+  "rooms": 15,
+  "phone": "+998339561608"
+}

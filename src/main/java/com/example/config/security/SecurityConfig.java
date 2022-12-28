@@ -59,7 +59,6 @@ public class SecurityConfig {
         http.csrf().disable().cors().disable();
         http.authorizeHttpRequests()
                 .requestMatchers("/auth/**").permitAll()
-                .requestMatchers("/house/**").hasRole("ADMIN")
                 .requestMatchers(AUTH_WHITELIST).permitAll()
                 .anyRequest().authenticated()
                 .and().addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);

@@ -10,11 +10,11 @@ import lombok.Setter;
 public class JwtDTO {
     private Integer id;
 
-    private String username;
+    private String email;
     private ProfileRole role;
 
-    public JwtDTO(String username, ProfileRole role) {
-        this.username = username;
+    public JwtDTO(String email, ProfileRole role) {
+        this.email = email;
         this.role = role;
     }
 }

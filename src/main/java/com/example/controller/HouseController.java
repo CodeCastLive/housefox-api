@@ -31,8 +31,7 @@ public class HouseController {
     @Operation(summary = "Create house method", description = "This method is used to create house")
     @PostMapping("/create")
     public ResponseEntity<HouseResponseDTO> create(@Valid @RequestBody HouseCreateDTO dto) {
-        System.out.println("Hello world");
-        HouseResponseDTO result = houseService.create(dto, getUserId());
+        HouseResponseDTO result = houseService.create(dto);
         return ResponseEntity.ok(result);
     }
 
@@ -41,7 +40,7 @@ public class HouseController {
     @PutMapping("/update/{id}")
     public ResponseEntity<Boolean> update(@PathVariable Long id, @Valid @RequestBody HouseUpdateDTO dto,
                                           @RequestHeader(value = "Accept-Language", defaultValue = "RU") Language language) {
-        Boolean result = houseService.update(id, dto, getUserId(), language);
+        Boolean result = houseService.update(id, dto, language);
         return ResponseEntity.ok(result);
     }
 
@@ -50,7 +49,7 @@ public class HouseController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Boolean> delete(@PathVariable Long id,
                                           @RequestHeader(value = "Accept-Language", defaultValue = "RU") Language language) {
-        Boolean result = houseService.delete(id, getUserId(), language);
+        Boolean result = houseService.delete(id, language);
         return ResponseEntity.ok(result);
     }
 
@@ -69,7 +68,7 @@ public class HouseController {
     public ResponseEntity<Page<HouseFullResponseDTO>> getAll(@RequestParam("page") Integer page,
                                                              @RequestParam("size") Integer size,
                                                              @RequestHeader(value = "Accept-Language", defaultValue = "RU") Language language) {
-        Page<HouseFullResponseDTO> result = houseService.getAll(page, size, language);
+        Page<HouseFullResponseDTO> result = houseService.getAll(page, size);
         return ResponseEntity.ok(result);
     }
 
@@ -77,7 +76,7 @@ public class HouseController {
     @Operation(summary = "Get top 10 liked houses", description = "This method is used to get top 10 liked houses")
     @GetMapping("/get/top/liked")
     public ResponseEntity<List<HouseFullResponseDTO>> getTop10Liked(@RequestHeader(value = "Accept-Language", defaultValue = "RU") Language language) {
-        List<HouseFullResponseDTO> result = houseService.getLikedTop10(language);
+        List<HouseFullResponseDTO> result = houseService.getLikedTop10();
         return ResponseEntity.ok(result);
     }
 
@@ -85,11 +84,11 @@ public class HouseController {
     @Operation(summary = "Get top 10 viewed houses", description = "This method is used to get top 10 viewed houses")
     @GetMapping("/get/top/viewed")
     public ResponseEntity<List<HouseFullResponseDTO>> getTop10(@RequestHeader(value = "Accept-Language", defaultValue = "RU") Language language) {
-        List<HouseFullResponseDTO> result = houseService.getViewedTop10(language);
+        List<HouseFullResponseDTO> result = houseService.getViewedTop10();
         return ResponseEntity.ok(result);
     }
 
-    private Integer getUserId() {
+    private Long getUserId() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         CustomUserDetails user = (CustomUserDetails) authentication.getPrincipal();
 

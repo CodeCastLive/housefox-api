@@ -11,12 +11,12 @@ import java.util.List;
 
 public class CustomUserDetails implements UserDetails {
 
-    private Integer id;
+    private Long id;
     private String username;
     private String password;
     private ProfileRole role;
 
-    public CustomUserDetails(Integer id, String username, String password, ProfileRole role) {
+    public CustomUserDetails(Long id, String username, String password, ProfileRole role) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -61,7 +61,7 @@ public class CustomUserDetails implements UserDetails {
         return true;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 

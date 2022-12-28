@@ -79,7 +79,7 @@ public class HouseService {
     public Boolean delete(Long id, Integer userId, Language language) {
         Optional<HouseEntity> byId = houseRepository.findById(id);
         if (byId.isEmpty()) {
-            throw new HouseNotFoundException(resourceBundleService.getMessage("channel.not.found", language));
+            throw new HouseNotFoundException(resourceBundleService.getMessage("house.not.found", language));
         }
 
         HouseEntity houseEntity = byId.get();
@@ -90,7 +90,7 @@ public class HouseService {
     public HouseFullResponseDTO getById(Long id, Language language) {
         Optional<HouseEntity> byId = houseRepository.findById(id);
         if (byId.isEmpty()) {
-            throw new HouseNotFoundException(resourceBundleService.getMessage("channel.not.found", language));
+            throw new HouseNotFoundException(resourceBundleService.getMessage("house.not.found", language));
         }
 
         HouseEntity houseEntity = byId.get();

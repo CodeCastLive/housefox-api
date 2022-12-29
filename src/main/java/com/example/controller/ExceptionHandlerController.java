@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.exceptions.HouseNotFoundException;
+import com.example.exceptions.*;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -33,8 +33,29 @@ public class ExceptionHandlerController extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(body, headers, status);
     }
 
-    @ExceptionHandler({HouseNotFoundException.class})
-    private ResponseEntity<?> handler(HouseNotFoundException e) {
+    // ATTACH EXCEPTIONS
+    @ExceptionHandler({CouldNotRead.class})
+    private ResponseEntity<?> handler(CouldNotRead e) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+    }
+
+    @ExceptionHandler({FileNotFoundException.class})
+    private ResponseEntity<?> handler(FileNotFoundException e) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+    }
+
+    @ExceptionHandler({FileUploadException.class})
+    private ResponseEntity<?> handler(FileUploadException e) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+    }
+
+    @ExceptionHandler({OriginalFileNameNullException.class})
+    private ResponseEntity<?> handler(OriginalFileNameNullException e) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+    }
+
+    @ExceptionHandler({SomethingWentWrong.class})
+    private ResponseEntity<?> handler(SomethingWentWrong e) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
     }
 }

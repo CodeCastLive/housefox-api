@@ -1,5 +1,5 @@
 ### registration
-POST localhost:7070/auth/registration
+POST localhost:8080/auth/registration
 Content-Type: application/json
 
 {

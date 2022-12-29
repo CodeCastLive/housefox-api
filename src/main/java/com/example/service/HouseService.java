@@ -61,7 +61,7 @@ public class HouseService {
     public Boolean update(Long id, HouseUpdateDTO dto, Language language) {
         Optional<HouseEntity> byId = houseRepository.findById(id);
         if (byId.isEmpty()) {
-            throw new HouseNotFoundException(resourceBundleService.getMessage("channel.not.found", language));
+            throw new HouseNotFoundException(resourceBundleService.getMessage("house.not.found", language));
         }
 
         HouseEntity houseEntity = byId.get();
@@ -73,6 +73,7 @@ public class HouseService {
         houseEntity.setRooms(dto.getRooms());
         houseEntity.setPhone(dto.getPhone());
         houseEntity.setCreatedDate(LocalDateTime.now());
+        houseRepository.save(houseEntity);
         return true;
     }
 

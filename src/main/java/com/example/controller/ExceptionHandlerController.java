@@ -58,4 +58,10 @@ public class ExceptionHandlerController extends ResponseEntityExceptionHandler {
     private ResponseEntity<?> handler(SomethingWentWrong e) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
     }
+
+    @ExceptionHandler({HouseNotFoundException.class})
+    private ResponseEntity<?> handler(HouseNotFoundException e) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+    }
+
 }

@@ -1,0 +1,31 @@
+### CREATE IMAGE TO HOUSE
+POST http://localhost:8080/house/image/create
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzIyNTQwNTcsImVtYWlsIjoiYWRtaW5jZWVrQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNjcyMzQwNDU3LCJpc3MiOiJob3VzZWZveCB0ZXN0IHBvcnRhbGkifQ.-L80wiX9sRkUPJJDcyokzOGfSj3PEoQ1w81SFMETRDOfq9p4II0oeqDAD3XsV0retOi3BlAcNiRDhHezcbmXCA
+Content-Type: application/json
+
+{
+  "houseId": 2,
+  "attachId": "4e05bcfc-898c-4756-aa3d-2036f180b7e5"
+}
+
+### CREATE IMAGE TO HOUSE
+PUT http://localhost:8080/house/image/update/1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzIyNTQwNTcsImVtYWlsIjoiYWRtaW5jZWVrQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNjcyMzQwNDU3LCJpc3MiOiJob3VzZWZveCB0ZXN0IHBvcnRhbGkifQ.-L80wiX9sRkUPJJDcyokzOGfSj3PEoQ1w81SFMETRDOfq9p4II0oeqDAD3XsV0retOi3BlAcNiRDhHezcbmXCA
+Content-Type: application/json
+
+{
+  "houseId": 2,
+  "attachId": "4e05bcfc-898c-4756-aa3d-2036f180b7e5"
+}
+
+### DELETE IMAGE TO HOUSE
+DELETE http://localhost:8080/house/image/delete/1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzIyNTQwNTcsImVtYWlsIjoiYWRtaW5jZWVrQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNjcyMzQwNDU3LCJpc3MiOiJob3VzZWZveCB0ZXN0IHBvcnRhbGkifQ.-L80wiX9sRkUPJJDcyokzOGfSj3PEoQ1w81SFMETRDOfq9p4II0oeqDAD3XsV0retOi3BlAcNiRDhHezcbmXCA
+
+### GET HOUSEIMAGE BY ID
+GET http://localhost:8080/house/image/get/2
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzIyNTQwNTcsImVtYWlsIjoiYWRtaW5jZWVrQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNjcyMzQwNDU3LCJpc3MiOiJob3VzZWZveCB0ZXN0IHBvcnRhbGkifQ.-L80wiX9sRkUPJJDcyokzOGfSj3PEoQ1w81SFMETRDOfq9p4II0oeqDAD3XsV0retOi3BlAcNiRDhHezcbmXCA
+
+### GET HOUSEIMAGE BY HOUSE ID
+GET http://localhost:8080/house/image/get/house/2
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzIyNTQwNTcsImVtYWlsIjoiYWRtaW5jZWVrQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNjcyMzQwNDU3LCJpc3MiOiJob3VzZWZveCB0ZXN0IHBvcnRhbGkifQ.-L80wiX9sRkUPJJDcyokzOGfSj3PEoQ1w81SFMETRDOfq9p4II0oeqDAD3XsV0retOi3BlAcNiRDhHezcbmXCA

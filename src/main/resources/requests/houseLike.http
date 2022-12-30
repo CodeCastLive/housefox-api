@@ -1,0 +1,23 @@
+### CREATE LIKE TO HOUSE (USER)
+POST http://localhost:8080/house/like/create
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzI0MTMyMzQsImVtYWlsIjoibmF6YXJvdmF6aW1qb244ODhAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTY3MjQ5OTYzNCwiaXNzIjoiaG91c2Vmb3ggdGVzdCBwb3J0YWxpIn0.EAAhS72Tl0D1bzz75obHRDVxEU1-8rFWEaGT-Gn-_hzOCCRnKDdMBVfw3eLXnYzgpMkf8OOFuNIKrwKBK2QdJw
+Content-Type: application/json
+
+{
+  "houseId": 1,
+  "type": "LIKE"
+}
+
+### UPDATE LIKE TYPE (USER)
+PUT http://localhost:8080/house/like/change
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzI0MTMyMzQsImVtYWlsIjoibmF6YXJvdmF6aW1qb244ODhAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTY3MjQ5OTYzNCwiaXNzIjoiaG91c2Vmb3ggdGVzdCBwb3J0YWxpIn0.EAAhS72Tl0D1bzz75obHRDVxEU1-8rFWEaGT-Gn-_hzOCCRnKDdMBVfw3eLXnYzgpMkf8OOFuNIKrwKBK2QdJw
+Content-Type: application/json
+
+{
+  "houseId": 2,
+  "type": "DISLIKE"
+}
+
+### DELETE LIKE (USER, OWNER)
+DELETE http://localhost:8080/house/like/delete/5
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzI0MTMyMzQsImVtYWlsIjoibmF6YXJvdmF6aW1qb244ODhAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTY3MjQ5OTYzNCwiaXNzIjoiaG91c2Vmb3ggdGVzdCBwb3J0YWxpIn0.EAAhS72Tl0D1bzz75obHRDVxEU1-8rFWEaGT-Gn-_hzOCCRnKDdMBVfw3eLXnYzgpMkf8OOFuNIKrwKBK2QdJw

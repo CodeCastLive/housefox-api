@@ -1,8 +1,8 @@
 package com.example.service;
 
-import com.example.dto.house.image.HouseImageCreateDTO;
-import com.example.dto.house.image.HouseImageResponseDTO;
-import com.example.dto.house.image.HouseImageUpdateDTO;
+import com.example.dto.houseImage.HouseImageCreateDTO;
+import com.example.dto.houseImage.HouseImageResponseDTO;
+import com.example.dto.houseImage.HouseImageUpdateDTO;
 import com.example.entity.HouseImageEntity;
 import com.example.enums.Language;
 import com.example.exceptions.HouseImageNotFoundException;

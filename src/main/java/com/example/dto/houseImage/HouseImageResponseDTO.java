@@ -1,4 +1,4 @@
-package com.example.dto.house.image;
+package com.example.dto.houseImage;
 
 import lombok.Getter;
 import lombok.Setter;

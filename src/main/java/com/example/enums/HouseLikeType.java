@@ -1,5 +1,5 @@
 package com.example.enums;
 
 public enum HouseLikeType {
-    like,dislike
+    LIKE, DISLIKE
 }

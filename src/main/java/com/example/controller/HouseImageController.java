@@ -1,8 +1,8 @@
 package com.example.controller;
 
-import com.example.dto.house.image.HouseImageCreateDTO;
-import com.example.dto.house.image.HouseImageResponseDTO;
-import com.example.dto.house.image.HouseImageUpdateDTO;
+import com.example.dto.houseImage.HouseImageCreateDTO;
+import com.example.dto.houseImage.HouseImageResponseDTO;
+import com.example.dto.houseImage.HouseImageUpdateDTO;
 import com.example.enums.Language;
 import com.example.service.HouseImageService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -17,7 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/house/image")
-@Tag(name = "House Image Controller", description = "This url is used to manage images in home")
+@Tag(name = "House image Controller", description = "This url is used to manage images in home")
 public class HouseImageController {
     @Autowired
     private HouseImageService houseImageService;

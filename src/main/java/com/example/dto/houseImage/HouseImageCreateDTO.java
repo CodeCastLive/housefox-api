@@ -1,4 +1,4 @@
-package com.example.dto.house.image;
+package com.example.dto.houseImage;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class HouseImageUpdateDTO {
+public class HouseImageCreateDTO {
     @NotNull(message = "House id required")
     private Long houseId;
 

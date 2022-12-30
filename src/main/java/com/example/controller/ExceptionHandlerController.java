@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import com.example.exceptions.*;
+import com.example.exp.AlreadyLikedException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -64,4 +65,13 @@ public class ExceptionHandlerController extends ResponseEntityExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
     }
 
+    @ExceptionHandler({AlreadyLikedException.class})
+    private ResponseEntity<?> handler(AlreadyLikedException e) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+    }
+
+    @ExceptionHandler({HouseLikeNotFoundException.class})
+    private ResponseEntity<?> handler(HouseLikeNotFoundException e) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+    }
 }

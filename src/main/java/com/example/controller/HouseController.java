@@ -1,10 +1,7 @@
 package com.example.controller;
 
 import com.example.config.security.CustomUserDetails;
-import com.example.dto.house.HouseCreateDTO;
-import com.example.dto.house.HouseFullResponseDTO;
-import com.example.dto.house.HouseResponseDTO;
-import com.example.dto.house.HouseUpdateDTO;
+import com.example.dto.house.*;
 import com.example.enums.Language;
 import com.example.service.HouseService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -23,7 +20,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/house")
 @Tag(name = "House Controller", description = "This url is used to manage homes")
-public class HouseController {
+public class  HouseController {
     @Autowired
     private HouseService houseService;
 
@@ -65,10 +62,10 @@ public class HouseController {
     @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
     @Operation(summary = "Get all houses pagination", description = "This method is used to get all houses with pagination")
     @GetMapping("/get/all")
-    public ResponseEntity<Page<HouseFullResponseDTO>> getAll(@RequestParam("page") Integer page,
+    public ResponseEntity<Page<HouseShortResponseDTO>> getAll(@RequestParam("page") Integer page,
                                                              @RequestParam("size") Integer size,
                                                              @RequestHeader(value = "Accept-Language", defaultValue = "RU") Language language) {
-        Page<HouseFullResponseDTO> result = houseService.getAll(page, size);
+        Page<HouseShortResponseDTO> result = houseService.getAllShortInfo(page, size, language);
         return ResponseEntity.ok(result);
     }
 

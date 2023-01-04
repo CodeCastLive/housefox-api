@@ -46,8 +46,6 @@ public class AuthController {
     @PostMapping("/authorization")
     public ResponseEntity<LoginResponseDTO> login(@RequestBody LoginDTO dto,
                                                   @RequestHeader(value = "Accept-Language", defaultValue = "RU") Language language) {
-
-
         log.info(" Login :  email {} ", dto.getEmail());
         LoginResponseDTO response = service.login(dto, language);
         return ResponseEntity.ok(response);

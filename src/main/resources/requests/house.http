@@ -37,8 +37,8 @@ GET http://localhost:8080/house/get/2
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzIyNTcxNjEsImVtYWlsIjoibmF6YXJvdmF6aW1qb244ODhAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTY3MjM0MzU2MSwiaXNzIjoiaG91c2Vmb3ggdGVzdCBwb3J0YWxpIn0.qjNjZ5lQI9wKqqTrHGR9Afh1kkCod3e7qkdSbQIZw6vLP__adhbV5Pt_VCxcYL2qWMjaa5_0MSvDsKd7L3TOQw
 
 ### GET ALL HOUSES PAGINATION (USER, ADMIN)
-GET http://localhost:8080/house/get/all?page=0&size=1
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzIyNTcxNjEsImVtYWlsIjoibmF6YXJvdmF6aW1qb244ODhAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTY3MjM0MzU2MSwiaXNzIjoiaG91c2Vmb3ggdGVzdCBwb3J0YWxpIn0.qjNjZ5lQI9wKqqTrHGR9Afh1kkCod3e7qkdSbQIZw6vLP__adhbV5Pt_VCxcYL2qWMjaa5_0MSvDsKd7L3TOQw
+GET http://localhost:8080/house/get/all?page=1&size=100
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzI4NDYzOTQsImVtYWlsIjoiYWRtaW5jZWVrQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNjcyOTMyNzk0LCJpc3MiOiJob3VzZWZveCB0ZXN0IHBvcnRhbGkifQ.a_YxnqXAndLyQT9CBOa6wk3_cJaJF1arxEmjO7PeZ8SNJDevJsjUxZDKOGp8ss3IFE50f49V4dl5g3flz-unAQ
 
 ### GET TOP 10 LIKED HOUSES (ADMIN)
 GET http://localhost:8080/house/get/top/liked
@@ -47,3 +47,6 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzIyNTQwNTcsImVtYWlsIjoiY
 ### GET TOP 10 VIEWED HOUSES (ADMIN)
 GET http://localhost:8080/house/get/top/viewed
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzIyNTQwNTcsImVtYWlsIjoiYWRtaW5jZWVrQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNjcyMzQwNDU3LCJpc3MiOiJob3VzZWZveCB0ZXN0IHBvcnRhbGkifQ.-L80wiX9sRkUPJJDcyokzOGfSj3PEoQ1w81SFMETRDOfq9p4II0oeqDAD3XsV0retOi3BlAcNiRDhHezcbmXCA
+
+### GET BY ID
+GET https://localhost:8080/house/get/2
